@@ -53,6 +53,62 @@ Includes Swagger documentation, JUnit test cases, and async text extraction.
 
 ---
 
+🔐 Exception Handling
+Handled globally using @ControllerAdvice, covering:
+
+File too large
+
+Unsupported formats
+
+Missing parameters
+
+Internal server errors
+
+---
+
+📘 Swagger Docs
+Visit: http://localhost:9090/swagger-ui.html
+
+Or check swagger.json
+
+All endpoints are grouped under document-controller
+
+---
+
+🧪 Testing
+1. Unit Tests
+Controllers tested using @WebMvcTest
+
+Services mocked with @MockBean
+
+Includes scenarios:
+
+Upload success
+
+Upload empty file
+
+PDF/DOCX upload
+
+Search and filter endpoints
+
+---
+
+🛠️ Run Locally
+1. Setup MySQL
+sql
+Copy
+Edit
+CREATE DATABASE testdb;
+2. Configure application.properties
+properties
+Copy
+Edit
+spring.datasource.url=jdbc:mysql://localhost:3306/testdb
+spring.datasource.username=root
+spring.datasource.password=root
+3. Run
+http://localhost:9090/swagger-ui.html
+
 ## 🧩 Architecture Flow
 
 ```plaintext
@@ -68,4 +124,4 @@ User (Swagger/Postman/Frontend)
    DocumentRepository (Spring Data JPA)
         |
         v
-   MySQL Database
+   MySQL Database 
